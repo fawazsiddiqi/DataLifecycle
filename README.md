@@ -60,3 +60,18 @@ Once your Watson Studio service is created, head over to creating a new project
 <p align="center">
 <img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/ws4.png?raw=true"  width="800">
 </p>
+
+4. Create a Data Refinery flow
+ * Once the data set is added to the project
+ * Click on ```Add to project``` on the top right
+ * Select ```Data Refinery Flow```
+ * Select the ```titanic.csv``` from the ```Data Assets``` section and click ```Add```
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/ws5.png?raw=true"  width="800">
+</p>
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/df1.png?raw=true"  width="800">
+</p>
+
