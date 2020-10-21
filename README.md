@@ -62,6 +62,7 @@ Once your Watson Studio service is created, head over to creating a new project
 </p>
 
 4. Create a Data Refinery flow
+
  * Once the data set is added to the project
  * Click on ```Add to project``` on the top right
  * Select ```Data Refinery Flow```
@@ -74,4 +75,143 @@ Once your Watson Studio service is created, head over to creating a new project
 <p align="center">
 <img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/df1.png?raw=true"  width="800">
 </p>
+
+5. Data Manupulation 
+
+The column types are already converted for you, but as you see we have a lot of missing data and unnormalized data which we need to fix (you can select the ```profile``` tab to see the profiling on the data)
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/df2.png?raw=true"  width="800">
+</p>
+
+## Missing Values
+The columns that have missing values in Titanic dataset are Age, Cabin and Embarked.
+The methods to fulfill the missing values are different for each attribute depending on the purpose of the attribute.
+
+### Embarked
+Fill the missing values in **Embarked** attribute, we only fill it with 'S' knwong that the passengers actually embarked at Southampton.
+* Select **Embarked** column, and click on Operations
+* Select **Conditional Replace** under the _Organize_ Category
+
+* Add one conditions in **Embarked** column, if value **empty** replace it with S. (Since only 2 missing values)
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/embarked1.png?raw=true"  width="800">
+</p>
+
+* Click ```Apply```
+
+### Cabin
+For **Cabin** attribute, since tracing the actual cabin for each passenger is impossible. Handling this attribute by creating additional column that has 1 for a passenger who's cabin exists and 0 if it does not exist. Relating to the accident, known passenger's cabin indicate that they survived. To do that follow the below steps:
+
+* Select the Cabin column, and click on Operations
+* Select **Conditional Replace** under the _Organize_ Category
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/cabin1.png?raw=true"  width="800">
+</p>
+
+* Add two conditions in Cabin's column, if value **empty** replace it with 0, if not empty replace with 1.
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/cabin2.png?raw=true"  width="800">
+</p>
+
+* Choose Cabin column, in the option of __Replace__ put 1
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/cabin3.png?raw=true"  width="800">
+</p>
+
+* Click ```Apply```
+
+**Note**: Make sure you change the data type of the Cabin to ```Integer```
+
+### Age
+
+For **age** attribute, calculate the mean of the column values and placing it in the null values.
+To replace missing values by the mean of the column, do the following:
+
+* From the Operations menu choose **Filter condition**.
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/age1.png?raw=true"  width="800">
+</p>
+
+* Select _column_ **Age** and **Is not empty** under _operator_ for the Filteration condition.
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/age2.png?raw=true"  width="800">
+</p>
+
+* From the **Operation** Bar, select **Summarize** operator.
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/age3.png?raw=true"  width="800">
+</p>
+
+* Fill in the operation command the required variables like this Summarize(newVarName=operator(column))
+```summarize(NewAge = mean(`Age`))```
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/age4.png?raw=true"  width="800">
+</p>
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/age5.png?raw=true"  width="800">
+</p>
+
+* Copy the geneated value to use after, and undo last two action from the backward arrow above.
+Since the filteration and the new summerized value is now useless.
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/age6.png?raw=true"  width="800">
+</p>
+
+* Select **Age** column again, from the Action menu choose **Replace missing values**
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/age7.png?raw=true"  width="800">
+</p>
+
+* Insert the mean value to be replaced with and press _Apply_ button.
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/age8.png?raw=true"  width="800">
+</p>
+
+## Duplicates 
+
+* Titanic data set does not have sensitive information that should be unique except for the passenger ID. Simply select the Action menu in ```PassengerId``` column and choose Remove duplicates.
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/dup1.png?raw=true"  width="800">
+</p>
+
+6. Saving and running your refinery flow
+
+* Once completed with all the above steps click on ```Edit``` on the right pane 
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/df3.png?raw=true"  width="800">
+</p>
+
+* Click on ```Edit Output``` and rename the output as ```titanic_shaped.csv```
+
+7. Running your flow 
+
+* Once completed editing the output, on your top right select ```Jobs```
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/df4.png?raw=true"  width="800">
+</p>
+
+* Select ```Save and Create a Job```
+* Give the Job a name and click ```Next``` to run the cleaning job
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/df5.png?raw=true"  width="800">
+</p>
+
+Now you will see ```titanic_shaped.csv``` in your project assets
 
