@@ -40,7 +40,7 @@ We will use various IBM Services which will aid us to complete our data science 
 
 2. Create an empty project
 
-Once your Watson Studio service is created, head over to creating a new project 
+ Once your Watson Studio service is created, head over to creating a new project 
 
  * Access the serivce and click either **Create a project** or **New project**.
  * Select **Create an empty project**.
