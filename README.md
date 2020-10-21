@@ -76,7 +76,7 @@ We will use various IBM Services which will aid us to complete our data science 
 <img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/df1.png?raw=true"  width="800">
 </p>
 
-5. Data Manupulation 
+## Data Manupulation (using Data Refinery)
 
 The column types are already converted for you, but as you see we have a lot of missing data and unnormalized data which we need to fix (you can select the ```profile``` tab to see the profiling on the data)
 
