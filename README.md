@@ -215,3 +215,139 @@ Since the filteration and the new summerized value is now useless.
 
 Now you will see ```titanic_shaped.csv``` in your project assets
 
+## Machine Learning (using SPSS Modeler)
+
+1. Create a Modeler flow
+
+ * Click on ```Add to project``` on the top right
+ * Select ```Modeler flow```
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/ws5.png?raw=true"  width="800">
+</p>
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/spss1.png?raw=true"  width="800">
+</p>
+
+ * Once launched you will see the following screen
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/spss2.png?raw=true"  width="800">
+</p>
+
+ * All the nodes can be put on canvas from the left side menu, first we have to load the data on canvas
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/spss3.png?raw=true"  width="800">
+</p>
+
+### Adding Data Set 
+
+ * Import --> (drag and drop or double click) Data Asset --> it will be visible on canvas, now double click the node again:
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/spss4.png?raw=true"  width="800">
+</p>
+
+* Click on “Change Data Asset”
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/spss5.png?raw=true"  width="800">
+</p>
+
+* Data Assets --> titanic_shaped.csv --> click ok --> click save, your data is now uploaded
+
+### Adding Field Opertions
+
+* From left menu, go to “Field operations”
+* Double click “Partition”, double click “Type”
+The nodes will be auto connected on canvas:
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/spss6.png?raw=true"  width="800">
+</p>
+
+* Now we have to configure both nodes, double click on Partition to choose how much you want to partition for test and train and save:
+* Change the training partition to 80, and the testing partition to 20
+* Click ```Save```
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/spss7.png?raw=true"  width="800">
+</p>
+
+* Double click on Type node to set data types and target value:
+* Set the data type of survived to "Nominal"
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/spss8.png?raw=true"  width="800">
+</p>
+
+* We have to predict who will/can survive, so “survived” is the target value here.
+* Now it’s time to add the modeling node, from left side menu choose “Modeling”. You can choose from around 40 algorithms here, if you don’t have any in mind and want to do a classification task, you can auto classify.
+* Double click on “AutoClassifier” it will automatically connect to the type node:
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/spss9.png?raw=true"  width="800">
+</p>
+
+* We already set the input and target column in “Type” so we don’t have to configure anything in “survived”node. Click on the play button on top and wait.
+
+After loading your canvas will look like this, with an additional node:
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/spss10.png?raw=true"  width="800">
+</p>
+
+* Hover on the newly generated node, 3 dots will appear on the top right corner of node, click on that and choose “View model”
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/spss11.png?raw=true"  width="800">
+</p>
+
+* You can see the models and their accuracies.
+* If you want more details, you can click on an algorithm, clicking on CHAID: 
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/spss12.png?raw=true"  width="800">
+</p>
+
+* Now go back, hover on the node again and choose “Preview”
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/spss13.png?raw=true"  width="800">
+</p>
+
+* You can see the predictions made for each row in the “$XS-Survived” column, along with the confidence score of each prediction in the “$XSC-Survived” column.
+
+* Now navigate to the left side menu again and from “Outputs” choose “Analysis” node and double click.
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/spss14.png?raw=true"  width="800">
+</p>
+
+* Run the SPSS flow again.
+
+* On the right side in the “outputs” tab you will see the output of analysis
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/spss15.png?raw=true"  width="800">
+</p>
+
+* Open the ```Analysis of [Survived]``` and you will be redirected to the confusion matrix of the model
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/spss16.png?raw=true"  width="800">
+</p>
+
+* Go back and Hover again to Analysis node and click on 3 dots --> Save branch as a model
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/spss17.png?raw=true"  width="800">
+</p>
+
+* The Machine learning model will now be in your Assets tab in the project
+* Create a machine learning service instance on IBM Cloud and go back to your project
+* Select ```Promote to Deployment Space```
+* Create a new Deployment Space and select your machine learning service 
+* Once deployed go to your deployment space and enable the machine learning model as a web service and test your model
