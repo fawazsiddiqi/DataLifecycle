@@ -20,6 +20,27 @@ We will use various IBM Services which will aid us to complete our data science 
 
 * **Watson Studio service instance:** A service instance must exist to be able to use **Data Refinery** & **SPSS Modeler**.
 
+## About the data set
+
+On April 15, 1912, during her maiden voyage, the widely considered “unsinkable” RMS Titanic sank after colliding with an iceberg. Unfortunately, there weren’t enough lifeboats for everyone onboard, resulting in the death of 1502 out of 2224 passengers and crew.
+
+While there was some element of luck involved in surviving, it seems some groups of people were more likely to survive than others.
+
+The columns involved are the following:
+
+|Variable|Definition|Key|
+|--------|----------|---|
+|survival|Survival|0 = No, 1 = Yes|
+|pclass|Ticket class|1 = 1st, 2 = 2nd, 3 = 3rd|
+|sex|Sex||
+|Age|Age in years||
+|sibsp|# of siblings / spouses aboard the Titanic||
+|parch|# of parents / children aboard the Titanic||
+|ticket|Ticket number||
+|fare|Passenger fare||
+|cabin|Cabin number||
+|embarked|Port of Embarkation|C = Cherbourg, Q = Queenstown, S = Southampton|
+
 ## Steps
 
 * If you do not have an IBM Cloud account please create one or login into your existing account by clicking [here](https://ibm.biz/pathto-ai)
@@ -346,8 +367,86 @@ After loading your canvas will look like this, with an additional node:
 <img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/spss17.png?raw=true"  width="800">
 </p>
 
-* The Machine learning model will now be in your Assets tab in the project
-* Create a machine learning service instance on IBM Cloud and go back to your project
-* Select ```Promote to Deployment Space```
-* Create a new Deployment Space and select your machine learning service 
-* Once deployed go to your deployment space and enable the machine learning model as a web service and test your model
+* You will see this prompt, keep the ```Branch terminal node``` as **Analysis**, and give your model a name and click on ```Save```
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/model1.png?raw=true"  width="800">
+</p>
+
+* You will now be able to see the model in your ```Assets``` tab in the project 
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/model2.png?raw=true"  width="800">
+</p>
+
+* Create a Watson Machine Learning Service Lite instance on IBM Cloud and go back to your project (make sure it is in the same region as your Watson Studio instance)
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/wml1.png?raw=true"  width="800">
+</p>
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/wml2.png?raw=true"  width="800">
+</p>
+
+* Once the machine learning service is created, select your model in the ```Assets``` tab in the project and select ```Promote to Deployment Space```
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/wml3.png?raw=true"  width="800">
+</p>
+
+* Select ```New Spacw +```
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/wml4.png?raw=true"  width="800">
+</p>
+
+* Create a new Deployment Space and select your machine learning service and cloud object storage and click ```create```
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/wml5.png?raw=true"  width="800">
+</p>
+
+* Once the deployment space is created, select it and click ```Promote```
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/wml6.png?raw=true"  width="800">
+</p>
+
+* Click on the hamburger menu and select ```Deployment spaces``` you should see your created deployment space there; access the deployment space
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/wml7.png?raw=true"  width="800">
+</p>
+
+* Select the model and click on create deployment
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/wml8.png?raw=true"  width="800">
+</p>
+
+* You will be prompted with the following; Select ```Online``` and give your deployment a name and click ```Create```
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/wml9.png?raw=true"  width="800">
+</p>
+
+* Wait for the status to be set to ```Deployed```
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/wml10.png?raw=true"  width="800">
+</p>
+
+* Access the deployment and go to the ```Test``` tab
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/wml11.png?raw=true"  width="800">
+</p>
+
+* Access the data set ```titanic_shaped.csv``` and pick a set of values to test your model and click ```Predict```
+
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/wml12.png?raw=true"  width="800">
+</p>
+
+As you can see that there was a 92% of chance which was predicted that ```Frolicher, Miss. Hedwig Margaritha``` has survived the Titanic sinking. The model is giving us results in terms of the ```Survived``` field on how likely is a person to survive.
