@@ -24,6 +24,8 @@ We will use various IBM Services which will aid us to complete our data science 
 
 * If you do not have an IBM Cloud account please create one or login into your existing account by clicking [here](https://ibm.biz/pathto-ai)
 
+* Please make sure that you have cloned/downloaded this repository
+
 1. Create a Watson Studio service 
 
 * Once logged in, search for Watson Studio and create a lite instance 
@@ -48,4 +50,13 @@ Once your Watson Studio service is created, head over to creating a new project
 
 <p align="center">
 <img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/ws3.png?raw=true"  width="800">
+</p>
+
+3. Add your data
+
+ * Once in your project, click on the Assets tab
+ * On the pane to the left, either drag and drop your data set or click browse and locate your dataset and add it to the project 
+ 
+<p align="center">
+<img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/ws4.png?raw=true"  width="800">
 </p>
