@@ -43,11 +43,11 @@ The columns involved are the following:
 
 ## Steps
 
-* If you do not have an IBM Cloud account please create one or login into your existing account by clicking [here](https://ibm.biz/pathto-ai)
+* If you do not have an IBM Cloud account please create one or login into your existing account by clicking **[here](https://ibm.biz/pathto-ai)**
 
 * Please make sure that you have cloned/downloaded this repository
 
-1. Create a Watson Studio service 
+**1. Create a Watson Studio service**
 
 * Once logged in, search for Watson Studio and create a lite instance 
 
@@ -59,7 +59,7 @@ The columns involved are the following:
 <img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/ws2.png?raw=true"  width="800">
 </p>
 
-2. Create an empty project
+**2. Create an empty project**
 
  Once your Watson Studio service is created, head over to creating a new project 
 
@@ -73,7 +73,7 @@ The columns involved are the following:
 <img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/ws3.png?raw=true"  width="800">
 </p>
 
-3. Add your data
+**3. Add your data**
 
  * Once in your project, click on the Assets tab
  * On the pane to the left, either drag and drop your data set or click browse and locate your dataset and add it to the project 
@@ -82,7 +82,7 @@ The columns involved are the following:
 <img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/ws4.png?raw=true"  width="800">
 </p>
 
-4. Create a Data Refinery flow
+**4. Create a Data Refinery flow**
 
  * Once the data set is added to the project
  * Click on ```Add to project``` on the top right
@@ -209,7 +209,7 @@ Since the filteration and the new summerized value is now useless.
 <img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/dup1.png?raw=true"  width="800">
 </p>
 
-6. Saving and running your refinery flow
+**5. Saving and running your refinery flow**
 
 * Once completed with all the above steps click on ```Edit``` on the right pane 
 
@@ -219,7 +219,7 @@ Since the filteration and the new summerized value is now useless.
 
 * Click on ```Edit Output``` and rename the output as ```titanic_shaped.csv```
 
-7. Running your flow 
+**6. Running your flow**
 
 * Once completed editing the output, on your top right select ```Jobs```
 
@@ -238,7 +238,7 @@ Now you will see ```titanic_shaped.csv``` in your project assets
 
 ## Machine Learning (using SPSS Modeler)
 
-1. Create a Modeler flow
+**1. Create a Modeler flow**
 
  * Click on ```Add to project``` on the top right
  * Select ```Modeler flow```
@@ -263,7 +263,7 @@ Now you will see ```titanic_shaped.csv``` in your project assets
 <img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/spss3.png?raw=true"  width="800">
 </p>
 
-### Adding Data Set 
+**2. Adding Data Set**
 
  * Import --> (drag and drop or double click) Data Asset --> it will be visible on canvas, now double click the node again:
 
@@ -279,7 +279,7 @@ Now you will see ```titanic_shaped.csv``` in your project assets
 
 * Data Assets --> titanic_shaped.csv --> click ok --> click save, your data is now uploaded
 
-### Adding Field Opertions
+**3. Adding Field Opertions**
 
 * From left menu, go to “Field operations”
 * Double click “Partition”, double click “Type”
@@ -378,6 +378,8 @@ After loading your canvas will look like this, with an additional node:
 <p align="center">
 <img src="https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/model2.png?raw=true"  width="800">
 </p>
+
+**4. Deploy Machine Learning Model**
 
 * Create a Watson Machine Learning Service Lite instance on IBM Cloud and go back to your project (make sure it is in the same region as your Watson Studio instance)
 
