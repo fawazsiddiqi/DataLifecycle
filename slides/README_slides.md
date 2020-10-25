@@ -100,23 +100,3 @@ jupyter:
 +++ {"slideshow": {"slide_type": "slide"}}
 
 ![center](https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/slide_images/Slide22.png?raw=true)
-
-+++ {"slideshow": {"slide_type": "slide"}}
-
-![center](https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/slide_images/Slide23.png?raw=true)
-
-+++ {"slideshow": {"slide_type": "slide"}}
-
-![center](https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/slide_images/Slide24.png?raw=true)
-
-+++ {"slideshow": {"slide_type": "slide"}}
-
-![center](https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/slide_images/Slide25.png?raw=true)
-
-+++ {"slideshow": {"slide_type": "slide"}}
-
-![center](https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/slide_images/Slide26.png?raw=true)
-
-+++ {"slideshow": {"slide_type": "slide"}}
-
-![center](https://github.com/fawazsiddiqi/DSPipeline/blob/master/images/slide_images/Slide27.png?raw=true)
