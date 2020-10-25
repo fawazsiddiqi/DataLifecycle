@@ -456,5 +456,5 @@ As you can see that there was a 92% of chance which was predicted that ```Frolic
 ## Resources
 
 Link to slides: http://fawazsiddiqi.github.io/DSPipeline/#/
-Sign up for IBM Cloud: https://ibm.biz/pathto-ai
 
+Sign up for IBM Cloud: https://ibm.biz/pathto-ai
