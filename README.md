@@ -452,3 +452,9 @@ After loading your canvas will look like this, with an additional node:
 </p>
 
 As you can see that there was a 92% of chance which was predicted that ```Frolicher, Miss. Hedwig Margaritha``` has survived the Titanic sinking. The model is giving us results in terms of the ```Survived``` field on how likely is a person to survive.
+
+## Resources
+
+Link to slides: http://fawazsiddiqi.github.io/DSPipeline/#/
+Sign up for IBM Cloud: https://ibm.biz/pathto-ai
+
