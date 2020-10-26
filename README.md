@@ -17,7 +17,7 @@ We will use various IBM Services which will aid us to complete our data science 
 ## Pre-requisites
 
 * **IBM Cloud account:**  An account must exist to use the platform.
-
+* IBM Cloud account please create one or login into your existing account by clicking **[here](https://ibm.biz/pathto-ai)**
 * **Watson Studio service instance:** A service instance must exist to be able to use **Data Refinery** & **SPSS Modeler**.
 
 ## About the data set
