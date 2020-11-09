@@ -16,7 +16,7 @@ We will use various IBM Services which will aid us to complete our data science 
 
 ## Pre-requisites
 
-* **IBM Cloud account:**  An account must exist to use the platform, please create one or login into your existing account by clicking **[here](https://ibm.biz/pathto-ai)**
+* **IBM Cloud account:**  An account must exist to use the platform, please create one or login into your existing account by clicking **[here](https://ibm.biz/Bdqk2v)**
 * **Watson Studio service instance:** A service instance must exist to be able to use **Data Refinery** & **SPSS Modeler**.
 
 ## About the data set
@@ -456,4 +456,4 @@ As you can see that there was a 92% of chance which was predicted that ```Frolic
 
 Link to slides: http://fawazsiddiqi.github.io/DSPipeline/#/
 
-Sign up for IBM Cloud: https://ibm.biz/pathto-ai
+Sign up for IBM Cloud: https://ibm.biz/Bdqk2v
