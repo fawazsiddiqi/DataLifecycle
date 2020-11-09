@@ -22,7 +22,7 @@ Data Visualization with Python - https://cognitiveclass.ai/courses/data-visualiz
 
 3. Machine Learning in Detail
 
-https://www.coursera.org/learn/machine-learning
+https://www.coursera.org/learn/machine-learning
 
 https://cognitiveclass.ai/courses/machine-learning-with-python
 
