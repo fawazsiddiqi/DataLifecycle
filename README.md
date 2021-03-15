@@ -1,4 +1,4 @@
-# Collect, clean, predict and deploy your Data Science Pipeline 
+# Data Science Lifecycle with Watson Studio, Data Refinery and SPSS Modeler
 
 Lets collect, clean, predict and deploy your data science pipeline on IBM Cloud. As we all know a data science pipeline consists of various steps, which certainly starts with collecting your data from different data sources, then we come to understanding the data making sure that we are able to get meaning out of it and we clean it by managing missing values and normalizing it and then we train and deploy our machine learning model which is followed by getting feedback from the models result and re-evaluating it. 
 
